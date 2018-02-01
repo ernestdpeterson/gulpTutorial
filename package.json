@@ -1,0 +1,14 @@
+{
+  "name": "gulp_tutorial",
+  "version": "1.0.0",
+  "description": "learning gulp configuration and usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ernest D. Peterson",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
