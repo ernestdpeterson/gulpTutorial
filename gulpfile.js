@@ -5,6 +5,8 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var eslint = require('gulp-eslint');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 gulp.task('default', function(done) {
     gulp.watch('sass/**/*.scss', gulp.series('styles'));
@@ -61,12 +63,23 @@ gulp.task('copy-images', function(done) {
 
 gulp.task('scripts', function(done) {
     gulp.src('js/**/*.js')
+        .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
     done();
 });
 
 gulp.task('scripts-dist', function(done) {
     gulp.src('js/**/*.js')
-        .pipe(gulp.dest('dist/'));
+        .pipe(concat('all.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
     done();
 });
+
+gulp.task('dist', gulp.series(
+    'copy-html',
+    'copy-images',
+    'styles',
+    'lint',
+    'scripts-dist'
+));
