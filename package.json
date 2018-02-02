@@ -2,6 +2,7 @@
   "name": "gulp_tutorial",
   "version": "1.0.0",
   "description": "learning gulp configuration and usage",
+  "repository": "https://github.com/ernestdpeterson/gulpTutorial",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +10,9 @@
   "author": "Ernest D. Peterson",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "browser-sync": "^2.23.6",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-eslint": "^4.0.2"
   }
 }
